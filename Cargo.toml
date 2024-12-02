@@ -1,9 +1,9 @@
 [package]
-name = "mcp-rs-template"
+name = "mcp-server-hello"
 version = "0.1.0"
 edition = "2021"
-authors = ["your name <your-name@example.com>"]
-description = "Model Context Protocol (MCP) Rust CLI server template"
+authors = ["TeamDman <TeamDman9201@gmail.com>"]
+description = "Model Context Protocol (MCP) Rust Hello Server"
 keywords = ["rust", "ai", "mcp", "cli"]
 categories = ["command-line-utilities"]
 readme = "README.md"

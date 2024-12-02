@@ -1,9 +1,10 @@
+use crate::mcp::JSONRPC_VERSION;
 use rpc_router::RpcParams;
-use serde::{Deserialize, Serialize};
+use serde::Deserialize;
+use serde::Serialize;
 use serde_json::Value;
 use std::collections::HashMap;
 use url::Url;
-use crate::mcp::JSONRPC_VERSION;
 
 #[derive(Debug, Deserialize, Serialize, RpcParams, Clone)]
 pub struct InitializeRequest {
@@ -325,6 +326,7 @@ pub struct Root {
 }
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
+#[allow(dead_code)]
 pub enum ErrorCode {
     // MCP SDK error codes
     ConnectionClosed = -1,

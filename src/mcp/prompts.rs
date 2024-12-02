@@ -1,5 +1,6 @@
 use crate::mcp::types::*;
-use rpc_router::{HandlerResult, IntoHandlerError};
+use rpc_router::HandlerResult;
+use rpc_router::IntoHandlerError;
 use serde_json::json;
 
 pub async fn prompts_list(

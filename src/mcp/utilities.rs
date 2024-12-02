@@ -1,7 +1,10 @@
 use crate::mcp::types::*;
-use crate::mcp::{PROTOCOL_VERSION, SERVER_NAME, SERVER_VERSION};
+use crate::mcp::PROTOCOL_VERSION;
+use crate::mcp::SERVER_NAME;
+use crate::mcp::SERVER_VERSION;
 use rpc_router::HandlerResult;
-use serde_json::{json, Value};
+use serde_json::json;
+use serde_json::Value;
 
 /// handler for `initialize` request from client
 pub async fn initialize(_request: InitializeRequest) -> HandlerResult<InitializeResult> {
@@ -38,7 +41,7 @@ pub fn notifications_cancelled(_params: CancelledNotification) {
     // cancel request
 }
 
-pub async fn ping(_request: PingRequest) -> HandlerResult<EmptyResult> {
+pub async fn ping() -> HandlerResult<EmptyResult> {
     Ok(EmptyResult {})
 }
 
@@ -57,6 +60,7 @@ pub async fn roots_list(_request: Option<ListRootsRequest>) -> HandlerResult<Lis
 }
 
 /// send notification to client
+#[allow(dead_code)]
 pub fn notify(method: &str, params: Option<Value>) {
     let notification = json!({
         "jsonrpc": "2.0",
